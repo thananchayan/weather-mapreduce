@@ -1,0 +1,52 @@
+Weather Data Analysis - Result Summary
+
+Objective
+---------
+The goal of this MapReduce project was to analyze a real-world weather dataset and calculate:
+
+1. Average Temperature per Country
+2. Average Precipitation per Country
+
+using the dataset "The Weather of 187 Countries in 2020" from Kaggle.
+
+Dataset Details
+---------------
+- Format: CSV
+- Records: 65,000+ rows
+- Fields Used:
+  - Country (index 2)
+  - AvgTemperature (index 9)
+  - Precipitation (index 6)
+
+Experiments and Tasks
+---------------------
+
+Task 1: Average Temperature
+- Extracted country and temperature fields.
+- Used Java MapReduce to compute per-country temperature totals and counts.
+- Calculated final average in Reducer.
+- Output file: final_outputs/avg_temperature.csv
+
+Task 2: Average Precipitation
+- Extracted country and precipitation fields.
+- Used Java MapReduce to compute total precipitation per country.
+- Calculated average by dividing total by record count.
+- Output file: final_outputs/avg_precipitation.csv
+
+Observations
+------------
+- Countries like Brazil, India, and Indonesia showed higher average precipitation.
+- Countries like Canada, Russia, and Iceland had lower average temperatures.
+- Data inconsistencies (missing or invalid values) were filtered in the Mapper stage.
+- Hadoop processed all records efficiently inside Docker environment using HDFS.
+
+Suggestions for Improvement
+---------------------------
+- Add seasonal or monthly breakdowns for temperature and rainfall.
+- Visualize data trends using tools like Tableau or Matplotlib.
+- Explore other metrics such as humidity, wind speed, or extreme weather events.
+- Clean and normalize categorical country names before aggregation.
+
+Conclusion
+----------
+This project successfully demonstrates how Hadoop MapReduce can be used to perform large-scale weather data analysis, generating structured country-wise insights from raw climate datasets.
