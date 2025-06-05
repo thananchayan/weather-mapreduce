@@ -24,7 +24,7 @@ Built using **Java**, **Hadoop MapReduce**, and executed inside a **Docker-based
 Pull the repository to get all project files including source code, README, sample outputs, and screenshots.
 
 ```bash
-git clone <your-git-repo-url>
+git clone https://github.com/thananchayan/weather-mapreduce
 cd weather-mapreduce
 ```
 
