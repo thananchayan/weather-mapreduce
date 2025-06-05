@@ -45,9 +45,6 @@ target/weather-mapreduce-1.0-SNAPSHOT.jar
 
 ---
 
-
----
-
 ## 🐳 Hadoop Docker Installation (Optional)
 
 If you do not have Hadoop set up and want to run the project in a self-contained environment, use the following instructions.
