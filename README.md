@@ -45,6 +45,53 @@ target/weather-mapreduce-1.0-SNAPSHOT.jar
 
 ---
 
+
+---
+
+## 🐳 Hadoop Docker Installation (Optional)
+
+If you do not have Hadoop set up and want to run the project in a self-contained environment, use the following instructions.
+
+### Step 1: Pull Prebuilt Docker Image
+
+Depending on your system:
+
+```bash
+# For AMD/Intel-based CPUs
+docker pull silicoflare/hadoop:amd
+
+# For ARM-based (Mac M1/M2) CPUs
+docker pull silicoflare/hadoop:arm
+```
+
+### Step 2: Run a Hadoop Container
+
+Replace `weather-hadoop` with any name you'd like for your container:
+
+```bash
+docker run -it -p 9870:9870 -p 8088:8088 -p 9864:9864 --name weather-hadoop silicoflare/hadoop:amd
+```
+
+### Step 3: Initialize Hadoop Services
+
+Once inside the container:
+
+```bash
+init
+jps  # Check if ~7 processes are running (e.g., NameNode, DataNode, ResourceManager, etc.)
+```
+
+You can now continue with uploading data and running MapReduce jobs.
+
+### Step 4: Exit or Reopen Container
+
+```bash
+exit                            # To exit
+docker start -ai weather-hadoop  # To re-enter later
+```
+
+---
+
 ## 🐳 Step 3: Copy JAR and Dataset to Docker Container
 
 Transfer the compiled JAR and dataset into the running Hadoop Docker container.
