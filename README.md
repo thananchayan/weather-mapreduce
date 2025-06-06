@@ -171,10 +171,13 @@ docker cp my-hadoop:/root/avg_temperature_final.csv ./final_outputs/avg_temperat
 
 ## 📸 Screenshots to Include
 
-- `screenshots/hdfs_upload.png`
-- `screenshots/job_execution.png`
-- `screenshots/output_preview.png`
-- `screenshots/tsv_in_excel.png`
+- `screenshots/Average precipation output.png`
+- `screenshots/docker my-hadoop container.png`
+- `screenshots/hadoop container running in docker.png`
+- `screenshots/hadoop directory interface.png`
+- `screenshots/outputs in hadoop interface.png`
+- `screenshots/sample job running for average precipation.png`
+- `screenshots/whether.csv file inside the container.png`
 
 ---
 
