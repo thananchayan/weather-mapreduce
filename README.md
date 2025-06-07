@@ -45,7 +45,7 @@ target/weather-mapreduce-1.0-SNAPSHOT.jar
 
 ---
 
-## 🐳 Hadoop Docker Installation (Optional)
+## 🐳 Hadoop Docker Installation
 
 If you do not have Hadoop set up and want to run the project in a self-contained environment, use the following instructions.
 
@@ -66,7 +66,7 @@ docker pull silicoflare/hadoop:arm
 Replace `weather-hadoop` with any name you'd like for your container:
 
 ```bash
-docker run -it -p 9870:9870 -p 8088:8088 -p 9864:9864 --name weather-hadoop silicoflare/hadoop:amd
+docker run -it -p 9870:9870 -p 8088:8088 -p 9864:9864 --name my-hadoop silicoflare/hadoop:amd
 ```
 
 ### Step 3: Initialize Hadoop Services
@@ -84,7 +84,7 @@ You can now continue with uploading data and running MapReduce jobs.
 
 ```bash
 exit                            # To exit
-docker start -ai weather-hadoop  # To re-enter later
+docker start -ai my-hadoop  # To re-enter later
 ```
 
 ---
@@ -188,7 +188,3 @@ You can find final outputs in the `final_outputs/` directory:
 - `avg_temperature.csv`
 
 ---
-
-## ✅ Done!
-
-You now have a complete Hadoop-based analysis of weather data. 🎉
