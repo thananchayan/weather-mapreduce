@@ -45,7 +45,7 @@ target/weather-mapreduce-1.0-SNAPSHOT.jar
 
 ---
 
-## 🐳 Hadoop Docker Installation
+## 🐳 Step 3:Hadoop Docker Installation
 
 If you do not have Hadoop set up and want to run the project in a self-contained environment, use the following instructions.
 
@@ -89,7 +89,7 @@ docker start -ai my-hadoop  # To re-enter later
 
 ---
 
-## 🐳 Step 3: Copy JAR and Dataset to Docker Container
+## 🐳 Step 4: Copy JAR and Dataset to Docker Container
 
 Transfer the compiled JAR and dataset into the running Hadoop Docker container.
 
@@ -100,7 +100,7 @@ docker cp weather.csv my-hadoop:/root/weather.csv
 
 ---
 
-## 📂 Step 4: Upload Dataset to HDFS
+## 📂 Step :5 Upload Dataset to HDFS
 
 Move the dataset into Hadoop Distributed File System (HDFS) so it can be processed by the MapReduce job.
 
@@ -113,7 +113,7 @@ hdfs dfs -ls /input
 
 ---
 
-## 🚀 Step 5: Run MapReduce Jobs
+## 🚀 Step 6: Run MapReduce Jobs
 
 Use Hadoop to execute the Java JAR file. This will launch the mappers and reducers across the data.
 
@@ -133,7 +133,7 @@ hadoop jar /root/weather-mapreduce.jar org.thana.Driver /input/weather.csv /outp
 
 ---
 
-## 📤 Step 6: Export Output from HDFS
+## 📤 Step 7: Export Output from HDFS
 
 Bring the MapReduce results from HDFS back to the Docker container’s local file system.
 
@@ -144,7 +144,7 @@ hdfs dfs -get /output/avg_temperature/part-r-00000 /root/avg_temperature.csv
 
 ---
 
-## 🔁 Step 7: Format and Add Headers
+## 🔁 Step 8: Format and Add Headers
 
 Replace tab separators with commas and add CSV column headers for easier reading in Excel.
 
@@ -158,7 +158,7 @@ echo "Country,Average Temperature" | cat - /root/avg_temperature_cleaned.csv > /
 
 ---
 
-## 💻 Step 8: Copy Results Back to Host
+## 💻 Step 9: Copy Results Back to Host
 
 Retrieve the final CSV files from the Docker container to your host computer.
 
